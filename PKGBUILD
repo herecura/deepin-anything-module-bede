@@ -5,7 +5,7 @@ pkgdesc="Kernel module for deepin-anything (linux-bede)"
 _extramodules=4.20-BEDE-external
 _current_linux_version=4.20
 _next_linux_version=4.21
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://github.com/linuxdeepin/deepin-anything"
 license=('GPL3')
@@ -39,8 +39,8 @@ build() {
 
 package() {
     cd $_pkgname-$pkgver/kernelmod
-    install -dm 755 "$pkgdir"/usr/lib/{modules/$_extramodules,modules-load.d}
-    install -m 644 vfs_monitor.ko "$pkgdir"/usr/lib/modules/$_extramodules/
+    install -dm 755 "$pkgdir"/usr/lib/modules/$_extramodules/deepin
+    install -m 644 vfs_monitor.ko "$pkgdir"/usr/lib/modules/$_extramodules/deepin/
     find "${pkgdir}" -name '*.ko' -exec xz {} +
 }
 
