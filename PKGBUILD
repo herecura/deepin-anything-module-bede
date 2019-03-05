@@ -2,10 +2,10 @@ _pkgname="deepin-anything"
 pkgname=deepin-anything-module-bede
 pkgver=0.0.4
 pkgdesc="Kernel module for deepin-anything (linux-bede)"
-_extramodules=4.20-BEDE-external
-_current_linux_version=4.20.14
-_next_linux_version=4.21
-pkgrel=3
+_extramodules=5.0-BEDE-external
+_current_linux_version=5.0
+_next_linux_version=5.1
+pkgrel=4
 arch=('x86_64')
 url="https://github.com/linuxdeepin/deepin-anything"
 license=('GPL3')
@@ -21,13 +21,16 @@ depends=(
 )
 provides=('DEEPIN-ANYTHING-MODULE')
 source=("$_pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/deepin-anything/archive/$pkgver.tar.gz"
-        linux-4.20.patch)
+        linux-4.20.patch
+        linux-5.0.patch)
 sha512sums=('fcb7683ce3bef818ac06dd62f14b5624669f9c09b53c5f08e319b724f5408bc221154428a6436d9e2a68aa6444e966c494c8a7611dfed0c93b6b9e71a3da0f55'
-            'dc3c85e9535cc589fdf56d265c4330519c92b5bcc406153e3162ba6ef5e799b702c394e1961132770f4f3ddd288dbbfe74a9d8056329e4585eb5a2094ffe0155')
+            'dc3c85e9535cc589fdf56d265c4330519c92b5bcc406153e3162ba6ef5e799b702c394e1961132770f4f3ddd288dbbfe74a9d8056329e4585eb5a2094ffe0155'
+            '6179fae5263d651279e073b4e116cf5fd1986614a0f3129927c39f462cc2ff12bb7c118b64ddbd31399a752d6b177df517133ae634d38146465fe97f49dc31d4')
 
 prepare() {
     cd $_pkgname-$pkgver
     patch -p1 -i "$srcdir/linux-4.20.patch"
+    patch -p1 -i "$srcdir/linux-5.0.patch"
 }
 
 build() {
