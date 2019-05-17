@@ -1,11 +1,11 @@
 _pkgname="deepin-anything"
 pkgname=deepin-anything-module-bede
-pkgver=0.0.8
+pkgver=0.0.9
 pkgdesc="Kernel module for deepin-anything (linux-bede)"
 _extramodules=5.1-BEDE-external
-_current_linux_version=5.1.2
+_current_linux_version=5.1.3
 _next_linux_version=5.2
-pkgrel=11
+pkgrel=1
 arch=('x86_64')
 url="https://github.com/linuxdeepin/deepin-anything"
 license=('GPL3')
@@ -21,7 +21,7 @@ depends=(
 )
 provides=('DEEPIN-ANYTHING-MODULE')
 source=("$_pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/deepin-anything/archive/$pkgver.tar.gz")
-sha512sums=('362cb94124daae214bf477179ff19177501938b8fb7972bbc208486cd24c7712e13f0ebe2d47df4583fe2d0735734282ee8461c57323b2dd3b8d2827b2b180b6')
+sha512sums=('31f7507221c995bcf2667ff59765c14eea0e0d2739debbe85be785f1290f3e84614e9e691c84434798f5dc427deaafe116171ea72e7b14b862c90e8107545bee')
 
 #prepare() {
     #cd $_pkgname-$pkgver
